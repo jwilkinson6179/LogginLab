@@ -21,11 +21,19 @@ public class LogginLabTest {
         LogginLab lab = new LogginLab();
         lab.setThreshold(finalLimit);
 
-        for (Integer i = 1; i <= finalLimit; i++) {
-            if (lab.thresholdExceeds(i)) {
+        for (Integer i = 1; i <= finalLimit; i++)
+        {
+            if (lab.thresholdExceeds(i))
+            {
                 logger.log(Level.INFO, "Threshold not reached! It is "+i);
                 assertTrue(lab.thresholdExceeds(i));
-            } else {
+            }
+            else if(lab.thresholdReached(i))
+            {
+              logger.log(Level.INFO, "Threshehold reached!  It is " + i);
+            }
+            else
+            {
                 logger.log(Level.INFO, "Threshold finally reached!");
                 assertFalse(lab.thresholdExceeds(i));
             }
