@@ -31,6 +31,7 @@ public class LogginLabTest {
             else if(lab.thresholdReached(i))
             {
               logger.log(Level.INFO, "Threshehold reached!  It is " + i);
+              assertTrue(lab.thresholdReached(i));
             }
             else
             {
